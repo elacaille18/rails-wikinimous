@@ -1,0 +1,20 @@
+<h1>List of all your articles</h1>
+<ol>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title.capitalize, article_path(article) %> <br/>
+      <%= article.content %>  <br/>
+      <%= link_to "Edit", edit_article_path(article)%>
+
+      <%= link_to "Delete", article_path(article),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+    </li>
+
+
+  <% end %>
+</ol>
+
+
+<%= link_to "Create a new article", new_article_path,
+      data: { confirm: "Are you sure?" } %>

@@ -1,0 +1,11 @@
+
+<h1>Your article</h1>
+
+<p>
+  <%= @article.title.capitalize %> <br/>
+  <%= raw @markdown.render(@article.content) %>
+</p>
+
+
+
+<%= link_to "Back to library", articles_path %>
